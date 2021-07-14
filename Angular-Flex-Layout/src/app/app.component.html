@@ -1,0 +1,13 @@
+<div class="mat-h3" *ngIf="isAuth">Hello, {{ username }}</div>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <app-sidenav-menu (closeSidenav)="sidenav.close()"></app-sidenav-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-menu-panel (sidenavToggle)="sidenav.toggle()"></app-menu-panel>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

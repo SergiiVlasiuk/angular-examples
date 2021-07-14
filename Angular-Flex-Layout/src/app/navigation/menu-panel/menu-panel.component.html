@@ -1,0 +1,43 @@
+<div class="mat-h1">menu-panel works!</div>
+<mat-toolbar color="orange">
+    <div fxHide.lg>
+        <button mat-icon-button (click)="onToggleSidenav()">
+        <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+
+    <div fxFlex fxLayout="row nowrap" fxHide.lt-lg>
+        <div>
+            <a routerLink="stack-blitz">Stack blitz</a>
+        </div>
+        <div>
+            <a routerLink="mozilla-holy-grail-layout">Holy grail</a>
+        </div>
+        <div>
+            <a routerLink="complex-column-ordering">Complex column ordering</a>
+        </div>
+        <div>
+            <a routerLink="stack-overflow-grid-area">Grid area</a>
+        </div>
+        <div>
+            <a routerLink="js-fiddle-grid-with-column-spans">Fiddle grid with column spans</a>
+        </div>
+        <div>
+            <a routerLink="f-align-content">Flex align content</a>
+        </div>
+        <div *ngIf="isAuth">
+            <a routerLink="app-menu">Menu</a>
+        </div>
+        <div>
+            <a routerLink="fx-hide-component">fx-hide</a>
+        </div>
+        <div fxFlex="1 0 auto"></div>
+        <div *ngIf="isAuth">
+            <a>Hi, {{ username }} </a>
+            <a style="cursor: pointer" (click)="onLogout()">Logout</a>
+        </div>
+        <div *ngIf="!isAuth">
+            <a routerLink="login">Login</a>
+        </div>
+    </div>
+</mat-toolbar>
